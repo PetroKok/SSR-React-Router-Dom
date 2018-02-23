@@ -6,10 +6,11 @@ import { getLoadableState } from 'loadable-components/server';
 
 import App from './components/App';
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3001
 
 const app = express();
 app.use('/assets', express.static('./dist'));
+app.use('/public', express.static('./public'));
 
 app.get('*', async (req, res) => {
 
@@ -39,7 +40,7 @@ function render(html, loadableState) {
         <head>
             <meta charset="UTF-8">
             <title>Get real playlists to share with Spotify</title>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.min.css">
         </head>
         <body>
            
