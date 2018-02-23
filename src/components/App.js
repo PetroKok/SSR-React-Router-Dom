@@ -7,9 +7,6 @@ import Home from './Home/Home'
 import About from './About/About'
 import List from './List/List'
 import NavBar from "./NavBar/NavBar";
-//-----
-import './bootstrap.min.css'
-//-----
 
 class App extends React.Component
 {
