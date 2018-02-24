@@ -7,6 +7,7 @@ import Home from './Home/Home'
 import About from './About/About'
 import List from './List/List'
 import NavBar from "./NavBar/NavBar";
+import NotMatch from "./NotMatch/NotMatch";
 
 class App extends React.Component
 {
@@ -32,6 +33,7 @@ class App extends React.Component
                     <Route path="/" exact render={(props) => <Home {...props} data={(e) => this.handleChange}/>}/>
                     <Route path="/about" component={About}/>
                     <Route path="/list" component={List}/>
+                    <Route component={NotMatch}/>
                 </Switch>
             </div>
         );
