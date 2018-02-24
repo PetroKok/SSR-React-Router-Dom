@@ -17,4 +17,5 @@ class Main extends React.Component
         );
     }
 }
+
 hydrate(<Main/>, document.getElementById('root'));

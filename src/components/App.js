@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { hydrate } from "react-dom"
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
@@ -9,28 +9,15 @@ import List from './List/List'
 import NavBar from "./NavBar/NavBar";
 import NotMatch from "./NotMatch/NotMatch";
 
-class App extends React.Component
+export default class App extends Component
 {
-    constructor()
-    {
-        super();
-        this.state = {
-            info: ''
-        };
-    }
-
-    static handleChange(e)
-    {
-        console.log(e);
-    }
-
     render()
     {
         return(
             <div>
                 <NavBar/>
                 <Switch>
-                    <Route path="/" exact render={(props) => <Home {...props} data={(e) => this.handleChange}/>}/>
+                    <Route path="/" exact component={Home}/>
                     <Route path="/about" component={About}/>
                     <Route path="/list" component={List}/>
                     <Route component={NotMatch}/>
@@ -40,4 +27,3 @@ class App extends React.Component
     }
 }
 
-export default App;
