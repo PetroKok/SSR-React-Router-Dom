@@ -1,2 +1,0 @@
-webpackHotUpdate(0,{385:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var _=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:0;switch(arguments[1].type){case"INCREASE_COUNTER":return e+1;case"RESET_COUNTER":return 0;default:return e}};t.default=_,function(){"undefined"!=typeof __REACT_HOT_LOADER__&&__REACT_HOT_LOADER__.register(_,"default","D:/Node And React/CreateApp/src/reducers/counter.js")}()}});
-//# sourceMappingURL=0.cf84afde8833e3fe3a44.hot-update.js.map

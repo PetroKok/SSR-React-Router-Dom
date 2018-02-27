@@ -1,16 +1,13 @@
 import express from 'express';
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
-import {getLoadableState} from 'loadable-components/server';
-import { Provider } from 'react-redux'
+import {Provider} from 'react-redux'
 import store from './state'
-
-import App from './components/App'
+import App from './client/App'
 
 const PORT = process.env.PORT || 3001;
-
 const app = express();
+
 app.use('/assets', express.static('./dist'));
 app.use('/public', express.static('./public'));
 
@@ -20,34 +17,33 @@ function handleRender(req, res) {
 
     const context = {};
 
-
+// SERVER SIDE RENDERING WITH ROUTES V4 AND REDUX
     const appWithRouter = (
-
-            <Provider store={store}>
-                <StaticRouter location={req.url} context={context}>
-                    <App/>
-                </StaticRouter>
-            </Provider>
-
+        <Provider store={store}>
+            <StaticRouter location={req.url} context={context}>
+                <App/>
+            </StaticRouter>
+        </Provider>
     );
+//----------------------------------------------------
 
     if (context.url) {
         res.redirect(context.url);
         return;
     }
 
-    const preloadedState = store.getState();
+    const loadedState = store.getState();// STATE OF STORE (redux)
 
-    res.status(200).send(renderFullHTML(appWithRouter, preloadedState));
+    res.status(200).send(renderFullHTML(appWithRouter, loadedState));
 }
 
-function renderFullHTML(html, preloadedState) {
+function renderFullHTML(html, loadedState) {
     return `
     <!DOCTYPE html>
     <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <title>Get real playlists to share with Spotify</title>
+            <title>NODE REACT REDUX</title>
         </head>
         <body>
             <div id="root">${html}</div>
@@ -57,11 +53,11 @@ function renderFullHTML(html, preloadedState) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
             <script>
-                window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+                window.__PRELOADED_STATE__ = ${JSON.stringify(loadedState).replace(/</g, '\\u003c')}
             </script>
         </body>
     </html>
 `
 }
 
-app.listen(PORT, () => console.log('Demo app listening on port ${ PORT }'));
+app.listen(PORT, () => console.log('Server listening on port http://localhost:'+PORT));

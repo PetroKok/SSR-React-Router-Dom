@@ -1,22 +1,21 @@
 import React from 'react'
 import {BrowserRouter as Router} from 'react-router-dom'
 import {hydrate} from 'react-dom'
-
 //-----Main component
-import App from "./components/App";
-
+import App from "./client/App";
 //--------
 import store from './state'
-import { Provider } from 'react-redux'
+import {Provider} from 'react-redux'
+import {getIssues} from './api/githubApi'
 
 class Main extends React.Component {
     render() {
         return (
-                <Provider store={store}>
-                    <Router>
-                        <App/>
-                    </Router>
-                </Provider>
+            <Provider store={store}>
+                <Router>
+                    <App/>
+                </Router>
+            </Provider>
         );
     }
 }
@@ -24,40 +23,42 @@ class Main extends React.Component {
 hydrate(<Main/>, document.getElementById('root'));
 
 
-store.subscribe( () => console.log(" NEW STATE: ", store.getState()) );
+store.subscribe(() => console.log(" NEW STATE: ", store.getState()));
 
-
-console.log("_______________________________________");
 store.dispatch({
     type: "INCREASE_COUNTER"
 });
-
-console.log("_______________________________________");
-store.dispatch({
-    type: "INCREASE_COUNTER"
-});
-
-console.log("_______________________________________");
 store.dispatch({
     type: "RESET_COUNTER"
 });
 
-console.log("_______________________________________");
-store.dispatch({
-    type: "UNKNOWN",
-});
-
-console.log("____________________LOAD_ISSUES___________________");
 store.dispatch({
     type: "LOAD_ISSUES",
-    payload: [{id: 1, name: 'FIRST NAME'},{id: 2, name: "SECOND NAME"}]
+    payload: [{id: 1, name: 'FIRST NAME'}, {id: 2, name: "SECOND NAME"}]
 });
 
 
-console.log("______________UNKNOWN_______________");
-store.dispatch({
-    type: "UNKNOWN",
-});
-
-
-
+// store.dispatch({     FROM THIS DISPATCH
+//     type: "PROMISE",
+//     actions: ["ISSUES_LOADING", "ISSUES_LOADED","ISSUES_FAILURE"],
+//     promise: getIssues()
+// });
+//          TO MIDDLEWARE
+// const middleware = store => next => action => {
+//     if (action.type !== "PROMISE") {
+//         return next(action)
+//     }
+//     const [ISSUES_LOADING, ISSUES_LOADED,ISSUES_FAILURE] = action.actions;
+//     store.dispatch({
+//         type: ISSUES_LOADING
+//     });
+//     action.promise.then((data) => store.dispatch({
+//         type: ISSUES_LOADED,
+//         data,
+//     }), (error) => store.dispatch({
+//         type: ISSUES_FAILURE,
+//         error
+//     }));
+// };
+//
+// export default middleware;

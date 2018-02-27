@@ -1,11 +1,12 @@
-import {createStore, combineReducers} from 'redux'
-import * as reducers from './reducers'
+import {combineReducers, createStore, applyMiddleware} from 'redux'
+import * as reducers from './client/reducers'
+import promiseMiddleware from './client/middleware/promises'
+import logger from 'redux-logger'
+const reducer = combineReducers(reducers);
 
-console.log(reducers);
+const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, logger)(createStore);
 
-const reducer =  combineReducers(reducers);
-
-const store = createStore(reducer, {
+const store = createStoreWithMiddleware(reducer, {
     issues: [],
     counter: 0,
 });
