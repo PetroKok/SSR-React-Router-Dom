@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import { hydrate } from "react-dom"
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-
-//-----Componentssdsdfsdfasdfasdf
+import React, {Component} from 'react'
+import {hydrate} from "react-dom"
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+//-----Styles--
+import './css/bootstrap.min.css'
+import './css/styles.css'
+//-----Component--------
 import Home from './Home/Home'
 import About from './About/About'
 import List from './List/List'
 import NavBar from "./NavBar/NavBar";
 import NotMatch from "./NotMatch/NotMatch";
 
-export default class App extends Component
-{
-    render()
-    {
-        return(
+export default class App extends Component {
+    render() {
+        return (
             <div>
                 <NavBar/>
                 <Switch>

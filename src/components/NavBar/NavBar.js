@@ -14,14 +14,14 @@ class NavBar extends Component
 
                 <div className="collapse navbar-collapse" id="navbarColor01">
                     <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <Link className="nav-link" to="/">Home<span className="sr-only">(current)</span></Link>
+                        <li className="nav-item">
+                            <Link className="nav-link on-nav-link" to="/">Home<span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/about">About</Link>
+                            <Link className="nav-link on-nav-link" to="/about">About</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/list">List</Link>
+                            <Link className="nav-link on-nav-link" to="/list">List</Link>
                         </li>
                     </ul>
                 </div>

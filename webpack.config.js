@@ -1,15 +1,16 @@
 let webpack = require('webpack');
 let path = require('path');
-const { BundleAnalyzerPlugin } =  require('webpack-bundle-analyzer');
+const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 
 const srcPath = path.resolve(__dirname, 'src');
 const distPath = path.resolve(__dirname, 'dist');
 
-const  plugins  = [
+const plugins = [
     new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
         minChunks: Infinity,
     }),
+    new webpack.optimize.ModuleConcatenationPlugin()
 ];
 
 plugins.push(new BundleAnalyzerPlugin());
@@ -30,19 +31,19 @@ module.exports = {
     },
     plugins,
     resolve: {
-        modules: ['node_modules', 'src'],
+        modules: ['node_modules'],
         extensions: ['*', '.js', '.json'],
     },
     module: {
         loaders: [
             {
                 test: /\.js$/,
-                use: ['react-hot-loader/webpack','babel-loader'],
+                use: ['react-hot-loader/webpack', 'babel-loader'],
                 exclude: [/node_modules/, /public/]
             },
             {
                 test: /\.jsx$/,
-                use: ['react-hot-loader/webpack','babel-loader'],
+                use: ['react-hot-loader/webpack', 'babel-loader'],
                 exclude: [/node_modules/, /public/]
             },
             {

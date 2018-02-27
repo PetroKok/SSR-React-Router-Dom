@@ -1,0 +1,2 @@
+webpackHotUpdate(0,{386:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var _=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments[1];switch(t.type){case"LOAD_ISSUES":return t.payload;default:return e}};t.default=_,function(){"undefined"!=typeof __REACT_HOT_LOADER__&&__REACT_HOT_LOADER__.register(_,"default","D:/Node And React/CreateApp/src/reducers/issues.js")}()}});
+//# sourceMappingURL=0.56175979d4ebc1d03235.hot-update.js.map
