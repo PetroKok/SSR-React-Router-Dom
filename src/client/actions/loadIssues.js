@@ -1,9 +1,9 @@
 import {getIssues} from "../../api/githubApi"
 
-export const loadIssues = () => {
+export const loadIssues = (user) => {
     return {
         type: "PROMISE",
         actions: ["ISSUES_LOADING", "ISSUES_LOADED","ISSUES_FAILURE"],
-        promise: getIssues()
+        promise: getIssues(user)
     }
 };

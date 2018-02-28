@@ -25,19 +25,6 @@ hydrate(<Main/>, document.getElementById('root'));
 
 store.subscribe(() => console.log(" NEW STATE: ", store.getState()));
 
-store.dispatch({
-    type: "INCREASE_COUNTER"
-});
-store.dispatch({
-    type: "RESET_COUNTER"
-});
-
-store.dispatch({
-    type: "LOAD_ISSUES",
-    payload: [{id: 1, name: 'FIRST NAME'}, {id: 2, name: "SECOND NAME"}]
-});
-
-
 // store.dispatch({     FROM THIS DISPATCH
 //     type: "PROMISE",
 //     actions: ["ISSUES_LOADING", "ISSUES_LOADED","ISSUES_FAILURE"],

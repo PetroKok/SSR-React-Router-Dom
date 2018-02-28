@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": " webpack -p --watch --hot",
-    "nodemon": "nodemon server.js"
+    "nodemon": "nodemon server.js",
+    "webpack-dev-server": "webpack -d --progress --colors -p 8090"
   },
   "author": "",
   "license": "ISC",

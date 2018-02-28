@@ -1,6 +1,7 @@
 import fetch from "isomorphic-fetch";
 
-export function getIssues() {
-    return fetch('https://api.github.com/repos/Yomguithereal/baobab/issues')
-        .then((r) => r.json())
+export function getIssues(user) {
+    return fetch('https://api.github.com/users/'+user+'/repos')
+        .then((res) => res.json())
 }
+
