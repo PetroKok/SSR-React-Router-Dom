@@ -1,2 +1,0 @@
-webpackHotUpdate(0,{394:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var _=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments[1];switch(t.type){case"LOADING_USER":return"LOADING";case"LOADED_USER":return t.data;case"FAILURE_USER":return"ERROR";default:return e}};t.default=_,function(){"undefined"!=typeof __REACT_HOT_LOADER__&&__REACT_HOT_LOADER__.register(_,"default","D:/Node And React/CreateApp/src/client/reducers/user.js")}()}});
-//# sourceMappingURL=0.549ed468a6f84b2f6af4.hot-update.js.map

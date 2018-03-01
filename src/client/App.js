@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {Switch, Route} from 'react-router-dom'
 //-----Styles--
-import './component/css/bootstrap.min.css'
-import './component/css/styles.css'
+import '../../public/css/bootstrap.min.css'
+import '../../public/css/styles.css'
 //-----Component--------
 import Home from './component/Home/Home'
 import About from './component/About/About'
