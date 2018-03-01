@@ -7,7 +7,7 @@ class NavBar extends Component
     {
         return(
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-                <Link className="navbar-brand" to="/">Brand</Link>
+                <a className="navbar-brand" href="https://server-side-rendering-react.herokuapp.com">Brand</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"/>
                 </button>
