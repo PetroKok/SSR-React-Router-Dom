@@ -6,7 +6,7 @@ import App from "./client/App";
 //--------
 import store from './state'
 import {Provider} from 'react-redux'
-import {getIssues} from './api/githubApi'
+
 
 class Main extends React.Component {
     render() {

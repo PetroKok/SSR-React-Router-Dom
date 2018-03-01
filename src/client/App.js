@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
-import {hydrate} from "react-dom"
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 //-----Styles--
 import './component/css/bootstrap.min.css'
 import './component/css/styles.css'

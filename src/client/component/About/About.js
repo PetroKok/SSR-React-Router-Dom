@@ -8,13 +8,6 @@ let user;
 
 class About extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-            user: ''
-        };
-
-    }
 
     handleShow(e) {
         e.preventDefault();
@@ -27,20 +20,20 @@ class About extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
-                <div className="row">
+            <div className="container">
 
-                    <form className="form-inline form-group md-2 mt-3">
-                        <div className="col">
+                <div className="row">
+                    <div className="md-2 mt-3 com-md-5">
+                        <form className="form-inline form-group">
                             <input onChange={::this.onChangeInput} type="text" className="form-control"/>
-                            <button onClick={::this.handleShow} className="btn btn-success ml-2">Confirm identity</button>
-                        </div>
-                    </form>
+                            <button onClick={::this.handleShow} className="btn btn-success ml-2">Confirm identity
+                            </button>
+                        </form>
+                    </div>
+                </div>
 
-                </div>
-                <div className="row">
-                    <UserGitHub issues={this.props.issues} user={this.props.issues.owner}/>
-                </div>
+                <UserGitHub issues={this.props.issues} user={this.props.issues.owner}/>
+
             </div>
         );
     }
@@ -54,7 +47,6 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({loadIssues}, dispatch)
-
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);
