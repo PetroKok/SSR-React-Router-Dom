@@ -1,22 +1,23 @@
 const middleware = store => next => action => {
-    if (action.type !== "PROMISE") {
+    if (action.type !== "REPOS_PROMISE" && action.type !== "USER_PROMISE") {
         return next(action)
     }
-    const [ISSUES_LOADING, ISSUES_LOADED,ISSUES_FAILURE] = action.actions;
-    store.dispatch({
-        type: ISSUES_LOADING
+
+    const [LOADING, LOADED, FAILURE] = action.actions;
+    console.log("PROMISE------->");
+    store.dispatch({        //---------LOADING
+        type: LOADING
     });
     action.promise.then((data) =>
-
-        store.dispatch({
-            type: ISSUES_LOADED,
+        store.dispatch({        //---------COMPLETE
+            type: LOADED,
             data,
         }), (error) =>
-
-        store.dispatch({
-        type: ISSUES_FAILURE,
-        error
+        store.dispatch({        //---------FAILURE
+            type: FAILURE,
+            error
         }));
 };
+
 
 export default middleware;

@@ -1,5 +1,5 @@
-import counter from './counter';
+import user from './user'
 import issues from './issues';
 
-export {counter};
+export {user};
 export {issues};

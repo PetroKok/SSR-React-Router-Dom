@@ -1,9 +1,17 @@
-import {getIssues} from "../../api/githubApi"
+import {getRespoAPI, getUserAPI} from "../../api/githubApi"
 
-export const loadIssues = (user) => {
+export const loadRepos = (user) => {
     return {
-        type: "PROMISE",
-        actions: ["ISSUES_LOADING", "ISSUES_LOADED","ISSUES_FAILURE"],
-        promise: getIssues(user)
+        type: "REPOS_PROMISE",
+        actions: ["ISSUES_LOADING", "ISSUES_LOADED", "ISSUES_FAILURE"],
+        promise: getRespoAPI(user)
+    }
+};
+
+export const loadUser = (user) => {
+    return {
+        type: "USER_PROMISE",
+        actions: ["LOADING_USER", "LOADED_USER", "FAILURE_USER"],
+        promise: getUserAPI(user)
     }
 };

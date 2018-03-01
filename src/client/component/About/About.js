@@ -1,38 +1,51 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {loadIssues} from "../../actions/loadIssues";
+import {loadRepos,loadUser} from "../../actions/loadIssues";
+import Profile from './Profile'
 import UserGitHub from "./UserGitHub";
 
-let user;
+let USER;
 
 class About extends Component {
 
 
     handleShow(e) {
         e.preventDefault();
-        this.props.loadIssues(user);
+        this.props.loadUser(USER);
+    }
+    sh(e)
+    {
+        e.preventDefault();
+        console.log(this.props.user)
+    }
+    search()
+    {
+        return(
+            <div className="row">
+                <div className="md-2 mt-3 com-md-5">
+                    <form className="form-inline form-group">
+                        <input onChange={::this.onChangeInput} type="text" className="form-control"/>
+                        <button onClick={::this.handleShow} className="btn btn-success ml-2">Confirm identity</button>
+                        <button onClick={::this.sh} className="btn btn-success ml-2">SHOW</button>
+                    </form>
+                </div>
+            </div>
+        );
     }
 
     onChangeInput(e) {
-        user = e.target.value;
+        USER = e.target.value;
     }
 
     render() {
         return (
             <div className="container">
-
-                <div className="row">
-                    <div className="md-2 mt-3 com-md-5">
-                        <form className="form-inline form-group">
-                            <input onChange={::this.onChangeInput} type="text" className="form-control"/>
-                            <button onClick={::this.handleShow} className="btn btn-success ml-2">Confirm identity
-                            </button>
-                        </form>
-                    </div>
-                </div>
-
-                <UserGitHub issues={this.props.issues} user={this.props.issues.owner}/>
+                {this.search()}
+                <Profile>
+                    this is the profile
+                </Profile>
+                {/*<UserGitHub issues={this.props.issues}/>*/}
 
             </div>
         );
@@ -41,12 +54,13 @@ class About extends Component {
 
 function mapStateToProps(state) {
     return {
-        issues: state.issues
+        issues: state.issues,
+        user: state.user
     }
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({loadIssues}, dispatch)
+    return bindActionCreators({loadRepos, loadUser}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);

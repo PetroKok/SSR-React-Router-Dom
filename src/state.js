@@ -9,7 +9,7 @@ const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, logger)(cre
 
 const store = createStoreWithMiddleware(reducer, {
     issues: [],
-    counter: 0,
+    user: [],
 });
 
 export default store;
