@@ -3,7 +3,7 @@ let path = require('path');
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer');
 
 const srcPath = path.resolve(__dirname, 'src');
-const distPath = path.resolve(__dirname, 'dist');
+const publicPath = path.resolve(__dirname, 'public/bundle');
 
 const plugins = [
     new webpack.optimize.CommonsChunkPlugin({
@@ -30,9 +30,9 @@ module.exports = {
     },
 
     output: {
-        path: distPath,
+        path: publicPath,
         filename: '[name].js',
-        publicPath: '/assets/',
+        publicPath: '/public/bundle/',
     },
     plugins,
     resolve: {
@@ -44,17 +44,17 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: ['react-hot-loader/webpack', 'babel-loader'],
-                exclude: [/node_modules/, /public/]
+                exclude: [/node_modules/]
             },
             {
                 test: /\.jsx$/,
                 use: ['react-hot-loader/webpack', 'babel-loader'],
-                exclude: [/node_modules/, /public/]
+                exclude: [/node_modules/]
             },
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
-                exclude: [/node_modules/, /public/],
+                exclude: [/node_modules/],
             }
         ]
     },
