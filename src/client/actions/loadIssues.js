@@ -15,3 +15,9 @@ export const loadUser = (user) => {
         promise: getUserAPI(user)
     }
 };
+
+export const resetRepos = () => {
+    return {
+        type: "RESET_ISSUES"
+    }
+};

@@ -4,7 +4,6 @@ const middleware = store => next => action => {
     }
 
     const [LOADING, LOADED, FAILURE] = action.actions;
-    console.log("PROMISE------->");
     store.dispatch({        //---------LOADING
         type: LOADING
     });

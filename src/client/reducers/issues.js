@@ -8,6 +8,8 @@ export default function (state = [], action) {
             return action.error;
         case "SELECT_ISSUE":
             return "ERROR";
+        case "RESET_ISSUES":
+            return [];
         default:
             return state
     }
