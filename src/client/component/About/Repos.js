@@ -11,7 +11,7 @@ class Repos extends Component {
 
         } else {
             return this.props.issues.reverse().map((issue, key) =>
-                <li key={key} className="list-group-item">{key}<a href={issue.html_url}>{issue.name}</a></li>
+                <li key={key} className="list-group-item">{key+1}. <a href={issue.html_url}>{issue.name}</a></li>
             )
         }
     }
