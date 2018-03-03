@@ -10,10 +10,10 @@ export const Profile = (props) => {
     } else {
         return (
             <div className="row">
-                <div className="col-lg-12 col-md-12 col-sm-12 row mb-3">
-                    <img src={props.user.avatar_url} className="img-thumbnail avatar mr-2 text-center"
-                         alt={props.user.name}/>
-                </div>
+                {/*<div className="col-lg-12 col-md-12 col-sm-12 row mb-3">*/}
+                    {/*<img src={props.user.avatar_url} className="img-thumbnail avatar mr-2 text-center"*/}
+                         {/*alt={props.user.name}/>*/}
+                {/*</div>*/}
                 <div className="col row">
                     <button className="btn btn-primary max-width">FOLLOWERS <span
                         className="badge badge-light">{props.user.followers}</span></button>

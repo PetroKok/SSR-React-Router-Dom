@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7bccd13-e77e-4051-b2af-ae0a880ac2a6" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/client/component/About/Profile.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/client/component/About/Search.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/public/bundle/client.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/bundle/client.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/bundle/vendor.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/public/bundle/vendor.js.map" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/client/component/About/About.js" afterPath="$PROJECT_DIR$/src/client/component/About/About.js" />
-      <change beforePath="$PROJECT_DIR$/src/client/component/About/Repos.js" afterPath="$PROJECT_DIR$/src/client/component/About/Repos.js" />
+      <change beforePath="$PROJECT_DIR$/src/client/component/About/Profile.js" afterPath="$PROJECT_DIR$/src/client/component/About/Profile.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,8 +33,8 @@
       <file leaf-file-name="Profile.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/client/component/About/Profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="70" lean-forward="false" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
+            <state relative-caret-position="306">
+              <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -183,6 +176,12 @@
               <item name="CreateApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="CreateApp" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="bundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CreateApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CreateApp" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -309,12 +308,12 @@
       <workItem from="1519996646906" duration="4842000" />
       <workItem from="1520080175269" duration="8653000" />
       <workItem from="1520093401034" duration="292000" />
-      <workItem from="1520101733983" duration="10267000" />
+      <workItem from="1520101733983" duration="10511000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123122000" />
+    <option name="totallyTimeSpent" value="123366000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -335,9 +334,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53731346" sideWeight="0.5120385" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.83037156" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35552195" sideWeight="0.48796147" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35552195" sideWeight="0.48796147" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40998486" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40998486" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990307" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -657,8 +656,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/component/About/Profile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="70" lean-forward="false" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
+        <state relative-caret-position="306">
+          <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
           <folding />
         </state>
       </provider>
