@@ -9,6 +9,7 @@ import About from './component/About/About'
 import List from './component/List/List'
 import NavBar from "./component/NavBar/NavBar";
 import NotMatch from "./component/NotMatch/NotMatch";
+import Test from "./component/Test/Test";
 
 export default class App extends Component {
     render() {
@@ -17,8 +18,9 @@ export default class App extends Component {
                 <NavBar/>
                 <Switch>
                     <Route path="/" exact component={Home}/>
-                    <Route path="/about" component={About}/>
+                    <Route path="/about/:user?" component={About}/>
                     <Route path="/list" component={List}/>
+                    <Route path="/test" component={Test}/>
                     <Route component={NotMatch}/>
                 </Switch>
             </div>
