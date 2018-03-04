@@ -1,4 +1,4 @@
-import {getRespoAPI, getUserAPI} from "../../api/githubApi"
+import {getRespoAPI, getUserAPI} from "../api/githubApi"
 
 export const loadRepos = (user) => {
     return {

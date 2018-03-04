@@ -1,57 +1,66 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import {bindActionCreators} from 'redux'
 import {loadRepos, loadUser, resetRepos} from "../../actions/loadIssues";
 //-------Components
-import Search from './Search';
 import Repos from "./Repos";
 import {Profile} from "./Profile";
+
 //-----------
-let USER;
 
 class About extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            linkToUser: null
+        }
+    }
+
     componentDidMount() {
-        USER = this.props.match.params.user;
-        if (USER !== undefined) this.props.loadUser(USER);
+
+        this.setState({linkToUser: this.props.match.params.user});
+        if (this.props.match.params.user !== undefined) this.props.loadUser(this.props.match.params.user);
     }
 
     getInfo() {
         this.props.resetRepos();
-        this.props.loadUser(USER);
+        this.props.loadUser(this.state.linkToUser);
+        console.log("SUBMIT:  ", this.state.linkToUser);
     }
 
-    handleShow(e) {
-        e.preventDefault();
+    handleShow() {
         this.getInfo();
     }
 
-    onKeyPress(target) {
-        if (target.charCode === 13) {
-            this.getInfo();
-        }
-    }
-
     onChangeInput(e) {
-        USER = e.target.value;
+        this.setState({linkToUser: e.target.value});
     }
 
     getRepos(e) {
         e.preventDefault();
-        this.props.loadRepos(USER);
+        console.log(this.state.linkToUser);
+        this.props.loadRepos(this.state.linkToUser);
     }
 
     render() {
         return (
             <div className="container">
-                <div className="row">
-                    <Search
-                        onChange={::this.onChangeInput}
-                        submit={::this.handleShow}
-                        user={USER}
-                        onKeyPress={::this.onKeyPress}
-                    />
+                <div className="col">
+                    <div className="row mr-lg-2 md-2 mt-3">
+                        <div className="col input-group">
+                            <input onChange={::this.onChangeInput} type="text" className="form-control mr-2"/>
+                            <div className="input-group-append">
+                                <Link onClick={::this.handleShow} className="btn btn-success"
+                                      to={{pathname: `/about/${this.state.linkToUser}`}}>
+                                    OK
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
                 <Profile user={this.props.user} getRepos={::this.getRepos}/>
                 <Repos issues={this.props.issues} count={this.props.user.public_repos}/>
             </div>

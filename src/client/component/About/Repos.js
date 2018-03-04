@@ -10,20 +10,22 @@ class Repos extends Component {
             return <h3>The user don't have repositories</h3>
 
         } else {
-            return this.props.issues.reverse().map((issue, key) =>
-                <li key={key} className="list-group-item">{key+1}. <a href={issue.html_url}>{issue.name}</a></li>
+            return this.props.issues.map((issue, key) =>
+                <li key={key} className="list-group-item">{key + 1}. <a href={issue.html_url}>{issue.name}</a></li>
             )
         }
     }
 
     render() {
         return (
-            <div className="row">
-                    <div className="mt-4">
-                        {this.showIssues()}
-                    </div>
+
+            <div className="col">
+                <div className="mt-4">
+                    {this.showIssues()}
+                </div>
             </div>
         );
     }
 }
+
 export default Repos;

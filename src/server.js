@@ -12,7 +12,12 @@ const app = express();
 
 app.use('/public', express.static('./public'));
 
-app.use((req, res) => {
+app.use(handleRender);
+
+
+
+
+function handleRender(req, res) {
 
     const context = {};
 
@@ -32,7 +37,7 @@ app.use((req, res) => {
     const loadedState = store.getState();// STATE OF STORE (redux)
 
     res.status(200).send(renderFullHTML(appWithRouter, loadedState));
-});
+}
 
 function renderFullHTML(html, loadedState) {
     return `

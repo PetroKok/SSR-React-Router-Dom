@@ -9,24 +9,29 @@ export const Profile = (props) => {
         return "Find user";
     } else {
         return (
-            <div className="row">
-                {/*<div className="col-lg-12 col-md-12 col-sm-12 row mb-3">*/}
-                    {/*<img src={props.user.avatar_url} className="img-thumbnail avatar mr-2 text-center"*/}
-                         {/*alt={props.user.name}/>*/}
-                {/*</div>*/}
-                <div className="col row">
-                    <button className="btn btn-primary max-width">FOLLOWERS <span
-                        className="badge badge-light">{props.user.followers}</span></button>
+            <div className="col">
+                <div className="text-center">
+                        <img src={props.user.avatar_url} className="img-thumbnail avatar mr-2 text-center"
+                             alt={props.user.name}/>
+                    <h3>{props.user.login}</h3>
                 </div>
-                <div className="col row">
-                    <button className="btn btn-primary max-width">FOLLOWING <span
-                        className="badge badge-light">{props.user.following}</span></button>
+
+                <div className="row">
+                    <div className="col-md-4">
+                        <button className="btn btn-primary max-width">FOLLOWERS <span
+                            className="badge badge-light">{props.user.followers}</span></button>
+                    </div>
+                    <div className="col-md-4">
+                        <button className="btn btn-primary max-width">FOLLOWING <span
+                            className="badge badge-light">{props.user.following}</span></button>
+                    </div>
+                    <div className="col-md-4">
+                        <button onClick={props.getRepos}
+                                className="btn btn-primary max-width">REPOSITORIES <span
+                            className="badge badge-light">{props.user.public_repos}</span></button>
+                    </div>
                 </div>
-                <div className="col row">
-                    <button onClick={props.getRepos}
-                            className="btn btn-primary max-width">REPOSITORIES <span
-                        className="badge badge-light">{props.user.public_repos}</span></button>
-                </div>
+
             </div>
         );
     }
