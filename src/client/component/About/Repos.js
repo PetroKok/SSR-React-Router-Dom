@@ -6,7 +6,7 @@ class Repos extends Component {
         if (this.props.issues === "LOADING") {
             return <h2>LOADING...</h2>
 
-        } else if (this.props.count === 0) {
+        } else if (this.props.issues.length === 0) {
             return <h3>The user don't have repositories</h3>
 
         } else {

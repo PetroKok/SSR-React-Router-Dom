@@ -1,28 +1,38 @@
+body {
+    background-size: cover;
+    background: #c7b39b url(http://russenergo.ru/wp-content/uploads/2015/07/background-site1.jpg) fixed center center;
+}
+
 .navbar-dark .navbar-nav .nav-link:hover {
     color: #53ff5c;
     transition: 0.5s;
 }
 
-.avatar{
+.avatar {
     height: 250px;
     width: auto;
 }
 
-.mr-1{
-    margin-right: .25rem!important;
+.mr-1 {
+    margin-right: .25rem !important;
 }
-.mr-2{
-    margin-right: .5rem!important;
+
+.mr-2 {
+    margin-right: .5rem !important;
 }
-.mr-3{
-    margin-right: 1rem!important;
+
+.mr-3 {
+    margin-right: 1rem !important;
 }
-.mr-4{
-    margin-right: 1.5rem!important;
+
+.mr-4 {
+    margin-right: 1.5rem !important;
 }
-.mr-5{
-    margin-right: 2rem!important;
+
+.mr-5 {
+    margin-right: 2rem !important;
 }
-.max-width{
+
+.max-width {
     width: 100%;
 }

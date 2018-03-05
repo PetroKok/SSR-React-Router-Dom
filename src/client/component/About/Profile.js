@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 export const Profile = (props) => {
     if (props.user === "LOADING") {
@@ -11,7 +12,7 @@ export const Profile = (props) => {
         return (
             <div className="col">
                 <div className="text-center">
-                        <img src={props.user.avatar_url} className="img-thumbnail avatar mr-2 text-center"
+                        <img src={props.user.avatar_url} className="img-thumbnail avatar mt-2 text-center"
                              alt={props.user.name}/>
                     <h3>{props.user.login}</h3>
                 </div>
@@ -26,9 +27,9 @@ export const Profile = (props) => {
                             className="badge badge-light">{props.user.following}</span></button>
                     </div>
                     <div className="col-md-4">
-                        <button onClick={props.getRepos}
+                        <Link onClick={props.getRepos} to={{ pathname: `/about/${props.user.login}/repos` }}
                                 className="btn btn-primary max-width">REPOSITORIES <span
-                            className="badge badge-light">{props.user.public_repos}</span></button>
+                            className="badge badge-light">{props.user.public_repos}</span></Link>
                     </div>
                 </div>
 
