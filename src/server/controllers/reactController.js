@@ -37,6 +37,8 @@ function renderFullHTML(html, loadedState) {
             <link rel="stylesheet" href="/public/bundle/stylesheets/myStyles.css">
         </head>
         <body>
+        
+        <div class="bg"></div>
             <div id="root">${ html }</div>
             
             <script src="/public/bundle/main.js"></script>

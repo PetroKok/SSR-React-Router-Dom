@@ -15,13 +15,24 @@ class About extends Component {
         super();
         this.state = {
             linkToUser: null
-        }
+        };
+
     }
 
-    componentDidMount() {
+    componentWillMount() {
+        this.getPropsNow(this.props.match.params);
+        console.log(this.props)
+    }
 
-        this.setState({linkToUser: this.props.match.params.user});
-        if (this.props.match.params.user !== undefined) this.props.loadUser(this.props.match.params.user);
+    componentWillReceiveProps(nextProps){
+        this.getPropsNow(nextProps.match.params);
+    }
+
+    getPropsNow(p) {
+        if(this.state.linkToUser !== p.user ){
+            this.setState({linkToUser: p.user});
+            if (p.user !== undefined) this.props.loadUser(p.user);
+        }
     }
 
     getInfo() {
@@ -50,18 +61,20 @@ class About extends Component {
                 <div className="col">
                     <div className="row mr-lg-2 md-2 mt-3">
                         <div className="col input-group">
-                            <input onChange={::this.onChangeInput} type="text" className="form-control mr-2" placeholder="Find someone on GitHub"/>
+                            <input onChange={::this.onChangeInput} type="text" className="form-control mr-2"
+                                   placeholder="Find someone on GitHub"/>
                             <div className="input-group-append">
                                 <Link onClick={::this.handleShow} className="btn btn-success"
-                                      to={{pathname: `/about/${this.state.linkToUser}`}}>
+                                      to={{pathname: `/github/${this.state.linkToUser}`}}>
                                     OK
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </div>
-                <Route path="/about/:user" render={() => <Profile user={this.props.user} getRepos={::this.getRepos}/>}/>
-                <Route path="/about/:user/:repos" render={() => <Repos issues={this.props.issues}/>}/>
+                <Route path="/github/:user"
+                       render={() => <Profile user={this.props.user} getRepos={::this.getRepos}/>}/>
+                <Route path="/github/:user/:repos" render={() => <Repos issues={this.props.issues}/>}/>
 
             </div>
         );

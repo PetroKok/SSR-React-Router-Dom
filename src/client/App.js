@@ -18,7 +18,7 @@ export default class App extends Component {
                 <NavBar/>
                 <Switch>
                     <Route path="/" exact component={Home}/>
-                    <Route path="/about/:user?" component={About}/>
+                    <Route path="/github/:user?" component={About}/>
                     <Route path="/list" component={List}/>
                     <Route path="/test" component={Test}/>
                     <Route component={NotMatch}/>

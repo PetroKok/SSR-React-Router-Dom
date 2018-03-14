@@ -17,7 +17,7 @@ class NavBar extends Component
                             <Link className="nav-link on-nav-link" to="/">Home<span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link on-nav-link" to="/about/PetroKok">About</Link>
+                            <Link className="nav-link on-nav-link" to="/github/PetroKok">About</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link on-nav-link" to="/list">List</Link>
